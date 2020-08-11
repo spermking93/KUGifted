@@ -1,3 +1,0 @@
-# KUGifted
-KUGifted
-+JHC
