@@ -32,7 +32,6 @@ The students will genrate the random data and save that in CSV format. They will
 
 [3rd Week Presentation](https://drive.google.com/file/d/1PwAlEKVr4v928iUiQ2ApL5n5HBQhrSkN/view?usp=sharing)
 [3rd Week Codes](https://drive.google.com/file/d/1NGrldhiUSy23qNLiLCCRUnOv7TwUgPiX/view?usp=sharing)
-=======
 
   Students can learn how to control the mini fan, water pump, led, and servo motor with GPIO network connection in this week. they will not gonna take data. Mentors can check their progress by uploaded code and movie from students.
 
