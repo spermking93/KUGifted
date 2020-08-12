@@ -41,7 +41,7 @@ FPS = 25
 dimensions = (960, 720)
 
 # 얼굴 인식 데이터
-face_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_tellotv.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # 세션을 저장한다면, 디렉토리가 있는지 확인.
