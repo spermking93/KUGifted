@@ -109,7 +109,6 @@ class FrontEnd(object):
         
         # X축 안전 범위
         szX = args.saftey_x
-
         # Y축 안전 범위
         szY = args.saftey_y
         
@@ -134,111 +133,6 @@ class FrontEnd(object):
             
             # 키보드 입력을 기다림
             k = cv2.waitKey(20)
-
-            # 0을 눌러서 거리를 0으로 설정
-            if k == ord('0'):
-                if not OVERRIDE:
-                    print("Distance = 0")
-                    tDistance = 0
-
-            # 1을 눌러서 거리를 1으로 설정
-            if k == ord('1'):
-                if OVERRIDE:
-                    oSpeed = 1
-                else:
-                    print("Distance = 1")
-                    tDistance = 1
-
-            # 2을 눌러서 거리를 2으로 설정
-            if k == ord('2'):
-                if OVERRIDE:
-                    oSpeed = 2
-                else:
-                    print("Distance = 2")
-                    tDistance = 2
-                    
-            # 3을 눌러서 거리를 3으로 설정
-            if k == ord('3'):
-                if OVERRIDE:
-                    oSpeed = 3
-                else:
-                    print("Distance = 3")
-                    tDistance = 3
-            
-            # 4을 눌러서 거리를 4으로 설정
-            if k == ord('4'):
-                if not OVERRIDE:
-                    print("Distance = 4")
-                    tDistance = 4
-                    
-            # 5을 눌러서 거리를 5으로 설정
-            if k == ord('5'):
-                if not OVERRIDE:
-                    print("Distance = 5")
-                    tDistance = 5
-                    
-            # 6을 눌러서 거리를 6으로 설정
-            if k == ord('6'):
-                if not OVERRIDE:
-                    print("Distance = 6")
-                    tDistance = 6
-
-            # T를 눌러서 이륙
-            if k == ord('t'):
-                if not args.debug:
-                    print("Taking Off")
-                    self.tello.takeoff()
-                    self.tello.get_battery()
-                self.send_rc_control = True
-
-            # L을 눌러서 착륙
-            if k == ord('l'):
-                if not args.debug:
-                    print("Landing")
-                    self.tello.land()
-                self.send_rc_control = False
-
-            # Backspace를 눌러서 명령을 덮어씀
-            if k == 8:
-                if not OVERRIDE:
-                    OVERRIDE = True
-                    print("OVERRIDE ENABLED")
-                else:
-                    OVERRIDE = False
-                    print("OVERRIDE DISABLED")
-
-            if OVERRIDE:
-                # S & W 눌러서 앞 & 뒤로 비행
-                if k == ord('w'):
-                    self.for_back_velocity = int(S * oSpeed)
-                elif k == ord('s'):
-                    self.for_back_velocity = -int(S * oSpeed)
-                else:
-                    self.for_back_velocity = 0
-
-                # a & d 를 눌러서 왼쪽 & 오른쪽으로 회전
-                if k == ord('d'):
-                    self.yaw_velocity = int(S * oSpeed)
-                elif k == ord('a'):
-                    self.yaw_velocity = -int(S * oSpeed)
-                else:
-                    self.yaw_velocity = 0
-
-                # Q & E 를 눌러서 위 & 아래로 비행
-                if k == ord('e'):
-                    self.up_down_velocity = int(S * oSpeed)
-                elif k == ord('q'):
-                    self.up_down_velocity = -int(S * oSpeed)
-                else:
-                    self.up_down_velocity = 0
-
-                # c & z 를 눌러서 왼쪽 & 오른쪽으로 비행
-                if k == ord('c'):
-                    self.left_right_velocity = int(S * oSpeed)
-                elif k == ord('z'):
-                    self.left_right_velocity = -int(S * oSpeed)
-                else:
-                    self.left_right_velocity = 0
 
             # 프로그램 종료
             if k == 27:
