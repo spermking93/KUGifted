@@ -75,6 +75,9 @@ Now students can take the datas. they can draw 2D, 3D graph with thier own datas
 They should take the sensors and module for making their own module - 'if'.
 
 ## 6th Week
+
+[6th Week Presentation](https://drive.google.com/file/d/1PVSsLFSRHvLw8nk-7i6UDYnUm2_21hnY/view?usp=sharing)
+
   Stdudents will learn about the basic concept of machine learning - linear regression.
   They will take 10 points under certain time interval and predict the next data.
   The water pump and mini fan will turn on depending on the prediction data. 
