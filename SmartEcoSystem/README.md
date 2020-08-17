@@ -76,7 +76,7 @@ They should take the sensors and module for making their own module - 'if'.
 
 ## 6th Week
 
-[6th Week Presentation](https://drive.google.com/file/d/1PVSsLFSRHvLw8nk-7i6UDYnUm2_21hnY/view?usp=sharing)
+[6th Week Presentation](https://drive.google.com/file/d/110MuQVuxLtuM0tOthsAR6ls9CsrTsnbT/view?usp=sharing)
 
   Stdudents will learn about the basic concept of machine learning - linear regression.
   They will take 10 points under certain time interval and predict the next data.
