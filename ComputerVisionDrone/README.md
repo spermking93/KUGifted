@@ -12,5 +12,5 @@
 #### Drone Control Prinicple & Practice: Basic command by TelloApp, Python coding
 ## [6th](https://docs.google.com/presentation/d/1yiEERvusWs9BipMAMTB1i9NiCRfPKbSQn-28zH56oeU/)
 #### Drone Vision I: Face detection, Predicts emotions (by drone), R&E
-## [7th](https://drive.google.com/file/d/1pIQQS0KJX2NwK_Pe08uUZxtiwvZcsS8T/view?usp=sharing)
+## [7th](https://docs.google.com/presentation/d/1mVLDBmix8cJ0rMDbioWWX7K-uKemukcNsnlAL-kmbUQ/)
 #### Drone VIsion II: Processing video from drone  by openCV 
