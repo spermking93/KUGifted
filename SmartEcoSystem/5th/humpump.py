@@ -4,8 +4,8 @@ import RPi.GPIO as GPIO
 import Adafruit_DHT as dht
 import time
 
+# GPIO 사용을 위해 기본 설정을 합니다.
 GPIO.setmode(GPIO.BCM)
-
 GPIO.setup(23, GPIO.OUT)
 GPIO.output(23, GPIO.LOW)
 GPIO.setup(24, GPIO.OUT)
