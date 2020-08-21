@@ -6,24 +6,28 @@ import Adafruit_DHT as dht
 import time
 import smbus
 
+# GPIO의 핀 모드를 BCM으로 설정합니다.
 GPIO.setmode(GPIO.BCM)
 
+# 펌프 제어를 위해 GPIO 핀을 설정합니다.
 GPIO.setup(23, GPIO.OUT)        # pump
 GPIO.output(23, GPIO.LOW)
 GPIO.setup(24, GPIO.OUT)
 GPIO.output(24, GPIO.LOW)
 
+# 팬 제어를 위해 GPIO 핀을 설정합니다.
 GPIO.setup(5, GPIO.OUT)         # fan
 GPIO.output(5, GPIO.LOW)
 GPIO.setup(6, GPIO.OUT)
 GPIO.output(6, GPIO.LOW)
 
+# LED 제어를 위해 GPIO 핀을 설정합니다.
 GPIO.setup(19,GPIO.OUT)     # R
 GPIO.setup(20,GPIO.OUT)     # G
 GPIO.setup(21,GPIO.OUT)     # B
-
 for i in range(3):
     GPIO.output(19+i, GPIO.HIGH)
+
 
 # 사용할 i2c 채널 번호
 I2C_CH = 1
@@ -48,21 +52,21 @@ try:
 
         h,t = dht.read_retry(dht.DHT22, 4)
         
-        '''습도값에 따라서 펌프 제어'''
+        # 습도값에 따라서 펌프 제어
         if h < 70:
             print("Hum: {0:0.1f}% PUMP ON".format(h))
             GPIO.output(23, GPIO.HIGH)
             time.sleep(3)
             GPIO.output(23, GPIO.LOW)
         
-        '''온도값에 따라서 팬 제어'''
+        # 온도값에 따라서 팬 제어
         if t>= 25:
             print("Temp: {0:0.1f}*C FAN ON".format(t))
             GPIO.output(5, GPIO.HIGH)
             time.sleep(3)
             GPIO.output(5, GPIO.LOW)
 
-        '''조도값에 따라서 LED 제어'''
+        # 조도값에 따라서 LED 제어
         # lux가 10 이하로 떨어지면 LED의 색상을 빨간색으로 설정합니다.
         if lux <= 10:
             print('{0}lux RED LED ON'.format(lux))

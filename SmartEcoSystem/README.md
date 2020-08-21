@@ -69,12 +69,15 @@ Now students can take the datas. they can draw 2D, 3D graph with thier own datas
 
 ## 5th Week
 
-[5th Week Presentation](https://drive.google.com/file/d/1xsO4M6WArmg91-nGcnboCsAo_Cr85BGX/view?usp=sharing)
+[5th Week Presentation](https://drive.google.com/file/d/189pJfVDaEDJHYP1JElvTDpPOUCYNXcfw/view?usp=sharing)
 
  Students will learn about 'if' command. Specifically, they will make thier own code to turn on water pump 'if' the humidity is lower than certain threshold.
 They should take the sensors and module for making their own module - 'if'.
 
 ## 6th Week
+
+[6th Week Presentation](https://drive.google.com/file/d/110MuQVuxLtuM0tOthsAR6ls9CsrTsnbT/view?usp=sharing)
+
   Stdudents will learn about the basic concept of machine learning - linear regression.
   They will take 10 points under certain time interval and predict the next data.
   The water pump and mini fan will turn on depending on the prediction data. 
@@ -82,5 +85,6 @@ They should take the sensors and module for making their own module - 'if'.
   
 
 # 7th Week - 8th Week
+[7th Week Presentation](https://drive.google.com/file/d/1nTaQQ2ydLxgtW6Av4kphPd-g7zA6Zy5k/view?usp=sharing)
 
 Finally they will make smart eco system with ML algorithm and sensors. The basic code will be given, but Final goal will be making their eco system. 
