@@ -5,10 +5,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-def LinearRegression(step, lr, df):     # setp: 몇 번 학습 반복할지 / lr: alpha / dadta: csv 파일을 읽은 데이터프레임
+def LinearRegression(step, lr, dfDataSel):     # setp: 몇 번 학습 반복할지 / lr: alpha / dadta: csv 파일을 읽은 데이터프레임
     
-    time = np.arange(0, len(df[0]), 1)
-    data = df[1]
+    time = np.arange(0, len(dfDataSel), 1)
+    data = dfDataSel
     
     x_data = time
     y_data = data
@@ -50,7 +50,7 @@ def LinearRegression(step, lr, df):     # setp: 몇 번 학습 반복할지 / lr
 
 
 dfData = pd.read_csv("humtempTime.csv", header = None)
-w, b = LinearRegression(30, 0.001, dfData)
+w, b = LinearRegression(30, 0.001, dfData.iloc[:30, 1])
 x = np.arange(0, len(dfData[0]), 1)
 y = [(w * num + b) for num in x] 
 
@@ -74,7 +74,8 @@ plt.show()
 print(w, b)
 
 ###########################################
-#   120번 째 이후 예측 값을 출력해봅니다.   #
+#   110번 째 예측 값을 출력해봅니다.   #
 ###########################################
 
-print("38번째: "  + str(37*w + b))
+print("36번째: "  + str(36*w + b))
+print("차이: " + str(36*w+b - dfData.iloc[36, 1]))
