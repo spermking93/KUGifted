@@ -1,16 +1,22 @@
+# 하루 동안의 습도 정보가 저장된 csv파일을 읽어 학습한 뒤 w와 b 값을 csv에 저장합니다.
 import tensorflow as tf
 import time
 import csv
 import pandas as pd
 import numpy as np
 
-def LinearRegression(step, lr, df):     # setp: 몇 번 학습 반복할지 / lr: alpha / dadta: csv 파일을 읽은 데이터프레임
-    
+# LinearRegression 함수를 정의합니다.
+# setp: 몇 번 학습 반복할지 / lr: alpha / dadta: csv 파일을 읽은 데이터프레임
+def LinearRegression(step, lr, df):     
+    # time에 0부터 lr 크기까지의 정수를 저장합니다.
     time = np.arange(0, len(df), 1)
+    # df를 data에 저장합니다.
     data = df
     
+    # x축엔 time을 y축은 data가 되도록합니다.
     x_data = time
     y_data = data
+
 
     b_initial = data[0]
     w_initial = (data[1] - data[0])
@@ -55,5 +61,7 @@ print(w_pm, b_pm)
 
 # result.csv파일에 w, b를 저장합니다.
 result = {'w': [w_am, w_pm], 'b': [b_am, b_pm]}
+# result를 pandas의 데이터프레임 형식으로 바꿔 result_pd에 저장합니다.
 result_pd = pd.DataFrame(result)
+# result_pd를 csv 파일로 저장합니다.
 result_pd.to_csv('result.csv', index = False)

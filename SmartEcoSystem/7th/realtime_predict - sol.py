@@ -4,7 +4,6 @@ import datetime
 import time
 import spidev
 import adafruit_dht
-import board
 
 dhtDevice = adafruit_dht.DHT11(board.D4)
 
@@ -15,19 +14,29 @@ humilist = []
 # 온도에 대한 리스트
 templist = []
 
-# panpump 함수를 정의합니다.
-def panpump(hum, temp):
-    #############################################
-    #       예측한 습도와 온도에 따라서          #
-    #    팬과 펌프를 제어하는 함수를 정의합니다.  #
-    #############################################
 
-# error 함수를 정의합니다.
-def error(expected, measurement):
-    ############################################
-    #       수업자료에 있는 오차율 공식에 따라   #      
-    #        오차율 구하는 함수를 정의합니다.    #  
-    ############################################ 
+def panpump(hum, temp):
+    if (60. > hum) :
+        #GPIO.output(w1,GPIO.HIGH)
+        #GPIO.output(w2,GPIO.LOW)
+        print("humhumhum")
+    else :
+        #GPIO.output(w1,GPIO.LOW)
+        #GPIO.output(w2,GPIO.LOW)
+        print("not hum")
+    time.sleep(0.5)
+
+
+    if (25. < temp) :
+        #GPIO.output(w3,GPIO.HIGH)
+        #GPIO.output(w4,GPIO.LOW)
+        print("temptemptemp")
+    else :
+        #GPIO.output(w3,GPIO.LOW)
+        #GPIO.output(w4,GPIO.LOW)
+        print("not temp")
+    time.sleep(5.0)
+
 
 
 #dataMag=10
@@ -39,9 +48,9 @@ i = 0
 try:
      while True:
         # 센서값을 읽어서 저장합니다.
-        t = float(dhtDevice.temperature)
         h = float(dhtDevice.humidity)
-    
+        t = float(dhtDevice.temperature)
+
         # 현재 시각에 대한 값을 저장합니다.  
         now = datetime.datetime.now()
 
@@ -51,8 +60,8 @@ try:
         # 시,분,초로 나타낸 현재 시각을 출력합니다.
         print(nowTime)
         
-        # 습도를  형식에 맞게 값을 출력합니다..
-        print('Temp={1:0.01f}*C Humidity={1:0.01f}%'.format(t, h))
+        # 온도 습도를  형식에 맞게 값을 출력합니다..
+        print('Temp={0:0.01f}*C Humidity={1:0.01f}%'.format(t, h))
     
         # i를 시간의 리스트 값으로 추가합니다.
         timelist.append(i)
@@ -63,30 +72,28 @@ try:
         # 측정된 온도값을 리스트값에 추가합니다.
         templist.append(t)
         
-        # 실제 시간간격을 1초로 설정합니다.
-        time.sleep(1)
+        # 실제 시간간격을 0.01초로 설정합니다.
+        time.sleep(.01)
          
-        if i == dataMag - 1 and i != 0:
+        if i % dataMag == 0 and i != 0:
              
             W_h, b_h = learn.LinearRegression(step , 0.001, humilist, timelist, dataMag)
             W_t, b_t = learn.LinearRegression(step , 0.001, templist, timelist, dataMag)     
-            
+             
             timeNext = dataMag
 
+            print("W_h: " + W_h + "b_h: " + b_h)
             next_hum = W_h * timeNext + b_h
             real_hum = float(dhtDevice.humidity)
-            
+            print("예측 습도: " + next_hum + "실제 습도: " + real_hum)
+            print("오차: " + abs(next_hum - real_hum))
+
+            print("W_t: " + W_t + "b_t: " + b_t)
             next_temp = W_t * timeNext + b_t 
             real_temp = float(dhtDevice.temperature)
-        
-            # 오차율을 구하는 함수를 호출하세요.
-            error(next_hum, real_hum)
-            error(next_temp, real_temp)
+            print("예측 온도: " + next_temp + "실제 온도: " + real_temp)
+            print("오차: " + abs(next_temp - real_temp))
 
-            ###################################################
-            #       지금까지 알아낸 정보들을 출력해보세요       #
-            ###################################################
-            
             i = 0
 
             timelist.clear()
