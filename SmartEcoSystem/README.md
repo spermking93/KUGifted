@@ -76,7 +76,7 @@ They should take the sensors and module for making their own module - 'if'.
 
 ## 6th Week
 
-[6th Week Presentation](https://drive.google.com/file/d/110MuQVuxLtuM0tOthsAR6ls9CsrTsnbT/view?usp=sharing)
+[6th Week Presentation](https://drive.google.com/file/d/1TRnHeL2RsQEeUT0WXlHFMbY42KrMYHqY/view?usp=sharing)
 
   Stdudents will learn about the basic concept of machine learning - linear regression.
   They will take 10 points under certain time interval and predict the next data.
@@ -85,6 +85,6 @@ They should take the sensors and module for making their own module - 'if'.
   
 
 # 7th Week - 8th Week
-[7th Week Presentation](https://drive.google.com/file/d/1nTaQQ2ydLxgtW6Av4kphPd-g7zA6Zy5k/view?usp=sharing)
+[7th Week Presentation](https://drive.google.com/file/d/16BfLv5sXCs7vKk9KkfA-cYyvTvX_RJ3b/view?usp=sharing)
 
 Finally they will make smart eco system with ML algorithm and sensors. The basic code will be given, but Final goal will be making their eco system. 
