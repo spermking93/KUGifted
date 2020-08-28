@@ -35,3 +35,4 @@ elif 12 <= pre_time < 24:
     predic_result = predict(w_pm,b_pm,t)
 
 print("예측 습도: " + str(predic_result))
+
