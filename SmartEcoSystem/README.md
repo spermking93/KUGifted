@@ -85,5 +85,5 @@ They should take the sensors and module for making their own module - 'if'.
   
 
 # 7th Week - 8th Week
-
+[7th Week Presentation] (https://drive.google.com/file/d/1HWyiZikDoEMuqdMi1JD3ux1ZHKJE1znQ/view?usp=sharing)
 Finally they will make smart eco system with ML algorithm and sensors. The basic code will be given, but Final goal will be making their eco system. 
