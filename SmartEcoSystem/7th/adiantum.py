@@ -30,6 +30,13 @@ templist = []
 # GPIO의 핀모드를 BCM으로 설정합니다.
 GPIO.setmode(GPIO.BCM)
 
+# LED의 출력 핀을 설정하고 HIGH로 설정합니다.
+pins = {'pin_R':19, 'pin_G':20, 'pin_B':21}
+for i in pins:
+    GPIO.setup(pins[i], GPIO.OUT)
+    GPIO.output(pins[i], GPIO.HIGH)
+
+
 # 5번 6번 핀을 팬의 출력 핀으로 설정하고 LOW로 설정합니다.
 GPIO.setup(5, GPIO.OUT)
 GPIO.output(5, GPIO.LOW)
